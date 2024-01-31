@@ -1,0 +1,1 @@
+Frnch: Timebank.cc package for Yunohost description placeholder

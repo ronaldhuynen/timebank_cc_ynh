@@ -62,11 +62,11 @@ ynh_script_progression --message="Install $app" --weight=5
 
 pushd $install_dir
 	php$phpversion artisan key:generate --no-interaction --force
-	# TODO! create new command to clear cache
-	php$phpversion artisan freescout:clear-cache
+	php$phpversion artisan config:clear
 	php$phpversion artisan storage:link
 	php$phpversion artisan migrate --no-interaction --force
-	php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction
+	# Do not create admin user, as the app will create one during the first db migration
+	#php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction
 	
 	chgrp -R www-data storage bootstrap/cache public/css/builds public/js/builds
 	chmod -R ug+rwx storage bootstrap/cache public/css/builds public/js/builds

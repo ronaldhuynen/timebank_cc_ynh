@@ -45,6 +45,14 @@ ram.runtime = "100M"
     [install.password]
     type = "password"
 
+    [install.phpversion]
+    ask.en = "Choose a PHP version you want to use for your app"
+    ask.fr = "Choisissez une version PHP que vous souhaitez utiliser pour votre application"
+    type = "select"
+    choices = ["8.1"]
+    default = "8.1"
+    
+
 [resources]
 
     [resources.sources]
@@ -68,7 +76,7 @@ ram.runtime = "100M"
 
     [resources.apt]
     #TODO: Update packages for Timebank_CC
-    packages = "mariadb-server, php8.2-mysql, php8.2-mbstring, php8.2-xml, php8.2-imap, php8.2-zip, php8.2-gd, php8.2-curl, php8.2-intl"
+    packages = "mariadb-server, php8.1-mysql, php8.1-mbstring, php8.1-xml, php8.1-imap, php8.1-zip, php8.1-gd, php8.1-curl, php8.1-intl"
 
     [resources.database]
     type = "mysql"

@@ -34,8 +34,6 @@ find $install_dir -type d -exec chmod 775 {} \;
 # SYSTEM CONFIGURATION
 #=================================================
 
-YNH_PHP_VERSION="$phpversion"
-
 ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
 
 ynh_add_fpm_config

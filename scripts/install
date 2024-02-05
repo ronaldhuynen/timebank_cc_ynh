@@ -62,8 +62,11 @@ ynh_script_progression --message="Install $app" --weight=5
 
 pushd $install_dir
 	php$phpversion artisan key:generate --no-interaction --force
+	read -n 1 -s -r -p "Press any key to continue"
 	php$phpversion artisan config:clear
+	read -n 1 -s -r -p "Press any key to continue"
 	php$phpversion artisan storage:link
+	read -n 1 -s -r -p "Press any key to continue"
 	php$phpversion artisan migrate --no-interaction --force
 	# Do not create admin user, as the app will create one during the first db migration
 	#php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction

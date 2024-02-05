@@ -82,7 +82,7 @@ pushd $install_dir
 	# Do not create admin user, as the app will create one during the first db migration
 	#php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction
 	
-	chgrp -R www-data storage bootstrap/cache public/css/builds public/js/builds
+	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
 popd
 

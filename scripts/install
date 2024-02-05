@@ -62,6 +62,9 @@ ynh_script_progression --message="Installing dependencies..." --weight=1
 
 ynh_install_app_dependencies $pkg_dependencies
 
+# Install composer
+ynh_install_composer
+
 #=================================================
 # FINAL INSTALL
 #=================================================

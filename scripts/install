@@ -90,3 +90,6 @@ popd
 # END OF SCRIPT
 #=================================================
 ynh_script_progression --message="Installation of $app completed" --last
+
+ynh_app_setting_get --app=$app --key=mysqlpwd
+

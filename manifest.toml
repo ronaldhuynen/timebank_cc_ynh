@@ -64,7 +64,7 @@ ram.runtime = "100M"
         # After each commit this resource changes incl the checksum, so this should be a release file
         # not a commit file.
         url = "https://github.com/ronaldhuynen/timebank_cc_2/archive/refs/heads/Messenger.tar.gz"
-        sha256 = "0c31128cffc3920e7562ab505b0414dc8c8967dad45e7e0de7757a3d86bad3ac"
+        sha256 = "fa4b4320ca70fa7464a566c1413c497723e8142b98954bba554f6d365c054732"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]

@@ -58,13 +58,13 @@ ram.runtime = "100M"
     [resources.sources]
 
         [resources.sources.main]
-        #TODO! Change to timebank_cc repo release. Mind the tar.gz extension:
+        # Mind the tar.gz extension:
         # Copy the zip file link and rename to tar.gz and download again. 
         # Calculate the sha256 locally: sha256sum /path/to/your/file.tar.gz.
         # After each commit this resource changes incl the checksum, so this should be a release file
         # not a commit file.
-        url = "https://github.com/ronaldhuynen/timebank_cc_2/archive/refs/heads/master.tar.gz"
-        sha256 = "d092235aa2e8c67d681d887a6c5202acd9788d0d37321d8d2046b8c56409dd70"
+        url = "https://github.com/ronaldhuynen/timebank_cc_2/archive/refs/heads/Messenger.tar.gz"
+        sha256 = "0c31128cffc3920e7562ab505b0414dc8c8967dad45e7e0de7757a3d86bad3ac"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]

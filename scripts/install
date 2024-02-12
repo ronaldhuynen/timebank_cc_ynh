@@ -64,10 +64,10 @@ ynh_script_progression --message="Installing dependencies..." --weight=1
 ynh_install_app_dependencies $pkg_dependencies
 
 # Install composer
-#ynh_install_composer // installs with --no-dev flag, this is only for production
+ynh_install_composer
 #ynh_composer_exec --workdir="$install_dir" --commands="install"
 #ynh_composer_exec --commands="install --prefer-dist --no-cache --no-progress --no-dev -a"
-ynh_composer_exec --commands="install --prefer-dist --no-cache --no-progress -a"
+ynh_composer_exec --workdir="$install_dir" --commands="install --prefer-dist --no-cache --no-progress -a"
 
 
 #=================================================

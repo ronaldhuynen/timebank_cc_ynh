@@ -46,6 +46,7 @@ chmod 644 "/etc/cron.d/$app"
 
 env_path="$PATH"
 ynh_add_systemd_config
+sudo chmod 644 /etc/systemd/system/$app.service
 
 #=================================================
 # APP INITIAL CONFIGURATION

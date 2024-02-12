@@ -65,7 +65,7 @@ ynh_install_app_dependencies $pkg_dependencies
 
 # Install composer
 #ynh_install_composer // installs with --no-dev flag, this is only for production
-ynh_composer_exec install
+ynh_composer_exec --workdir="$install_dir" --commands="install"
 
 #=================================================
 # FINAL INSTALL

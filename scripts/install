@@ -73,7 +73,7 @@ ynh_composer_exec --workdir="$install_dir" --commands="install --prefer-dist --n
 ynh_install_nodejs --nodejs_version=$YNH_NODEJS_VERSION
 pushd "$install_dir"
 	ynh_use_nodejs
-	ynh_exec_warn_less $ynh_npm install
+	npm install
 popd
 
 
@@ -88,13 +88,23 @@ pushd $install_dir
 	php8.1 artisan key:generate --no-interaction --force
 	php8.1 artisan config:clear
 	php8.1 artisan storage:link
-	php8.1 artisan migrate --no-interaction --force
+	#php8.1 artisan migrate --no-interaction --force
 	# Do not create admin user, as the app will create one during the first db migration
 	#php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction
 	
 	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
 popd
+
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=2
+
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.log"
+
 
 #=================================================
 # END OF SCRIPT

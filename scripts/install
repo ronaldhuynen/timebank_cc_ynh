@@ -100,6 +100,7 @@ pushd $install_dir
 	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
 	chmod +x artisan
+	ls -li artisan.* >> /var/log/timebank-cc-testing.log
 popd
 
 

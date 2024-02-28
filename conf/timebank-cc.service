@@ -13,7 +13,7 @@ WorkingDirectory=__INSTALL_DIR__/
 #Group=www-data
 Restart=always
 #ExecStart=php__PHPVERSION__ __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3
-ExecStart=php __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3
+ExecStart=php __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3 --verbose=3
 
 
 StandardOutput=append:/var/log/__APP__/__APP__.log

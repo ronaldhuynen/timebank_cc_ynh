@@ -9,7 +9,8 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 # Set to correct php version
 ExecStart=__INSTALL_DIR__/artisan queue:work --sleep=10 --tries=5
-StandardOutput=append:/var/log/__APP__/__APP__.log
+#StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardOutput=append:/var/log/timebank-cc-testing.log
 StandardError=inherit
 TimeoutStopSec=0
 Restart=always

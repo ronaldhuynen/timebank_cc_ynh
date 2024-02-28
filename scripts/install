@@ -44,7 +44,7 @@ ynh_add_config --template="cron" --destination="/etc/cron.d/$app"
 chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
-env_path="$PATH"
+env_path="$install_dir"
 ynh_add_systemd_config
 sudo chmod 644 /etc/systemd/system/$app.service
 

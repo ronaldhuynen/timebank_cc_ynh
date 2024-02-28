@@ -89,6 +89,7 @@ popd
 ynh_script_progression --message="Install $app" --weight=5
 
 pushd $install_dir
+	#TODO make php version dynamic
 	php8.1 artisan key:generate --no-interaction --force
 	php8.1 artisan config:clear
 	php8.1 artisan storage:link
@@ -98,6 +99,7 @@ pushd $install_dir
 	
 	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
+	chmod +x artisan
 popd
 
 
@@ -110,7 +112,11 @@ ynh_script_progression --message="Starting a systemd service..." --weight=2
 #ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.log"
 ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.log"
 
+#=================================================
+# RELOAD NGINX
+#=================================================
 
+systemctl reload nginx
 
 #=================================================
 # END OF SCRIPT

@@ -5,15 +5,15 @@ After=redis-server.service
 [Service]
 Type=notify
 User=__APP__
-Group=__APP__
+#Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 
 
 #User=www-data
-#Group=www-data
+Group=www-data
 Restart=always
 #ExecStart=php__PHPVERSION__ __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3
-ExecStart=php __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3 --verbose=3
+ExecStart=php __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3 --verbose
 
 
 StandardOutput=append:/var/log/__APP__/__APP__.log

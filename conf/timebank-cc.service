@@ -16,7 +16,8 @@ Restart=always
 ExecStart=php __INSTALL_DIR__/artisan queue:work --sleep=3 --tries=3 --verbose
 
 
-StandardOutput=append:/var/log/__APP__/__APP__.log
+#StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardOutput=append:/var/log/temp-test.log
 StandardError=inherit
 TimeoutStopSec=0
 

@@ -1,5 +1,5 @@
 [Unit]
-Description=Laravel Queue Worker
+Description=Laravel Queue Worker Systemd Service
 After=network.target
 
 [Service]

@@ -79,7 +79,7 @@ pushd "$install_dir"
 	ynh_use_nodejs
 	npm install
 	npm install jquery --save
-	sudo npm start
+	sudo npm run dev	#TODO: change to production when ready!
 popd
 
 

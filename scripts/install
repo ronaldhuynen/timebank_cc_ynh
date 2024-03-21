@@ -95,7 +95,7 @@ pushd $install_dir
 	php8.1 artisan key:generate --no-interaction --force
 	php8.1 artisan config:clear
 	php8.1 artisan storage:link
-	#php8.1 artisan migrate --no-interaction --force
+	php8.1 artisan migrate --no-interaction --force
 	# Do not create admin user, as the app will create one during the first db migration
 	#php$phpversion artisan freescout:create-user --role=admin --firstName=$firstname --lastName=$lastname --email=$email --password=$password --no-interaction
 	

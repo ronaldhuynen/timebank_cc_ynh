@@ -21,7 +21,7 @@ code = "TODO: link to Github repo"
 [integration]
 yunohost = ">= 11.2"
 architectures = "all"
-multi_instance = false
+multi_instance = true
 
 ldap = false
 

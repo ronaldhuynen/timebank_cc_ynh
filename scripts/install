@@ -78,6 +78,8 @@ ynh_install_nodejs --nodejs_version=$YNH_NODEJS_VERSION
 pushd "$install_dir"
 	ynh_use_nodejs
 	npm install
+	npm install jquery --save
+	sudo npm start
 popd
 
 
@@ -100,7 +102,6 @@ pushd $install_dir
 	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
 	chmod +x artisan
-	# ls -li artisan.* >> /var/log/timebank-cc-testing.log
 popd
 
 

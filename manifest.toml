@@ -80,3 +80,7 @@ ram.runtime = "100M"
 
     [resources.database]
     type = "mysql"
+
+    [resources.ports]
+    # Websockets broadcasting service uses port 6001 
+    main.default = 6001

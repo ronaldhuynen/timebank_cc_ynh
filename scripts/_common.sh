@@ -4,7 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-YNH_PHP_VERSION="8.1"
+YNH_PHP_VERSION="$phpversion"
 YNH_COMPOSER_VERSION="2.5.4"
 YNH_NODEJS_VERSION="12.16"
 YNH_NPM_VERSION="8.12"

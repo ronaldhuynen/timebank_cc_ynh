@@ -114,7 +114,7 @@ ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/
 
 # Add and start the websocket service
 yunohost service add "$app-websockets" --description="$app websockets service"
-ynh_systemd_action --service_name=${app}-web --action=start --log_path="/var/log/$app/$app.websockets.log"
+ynh_systemd_action --service_name=${app}-websockets --action=start --log_path="/var/log/$app/$app.websockets.log"
 
 #=================================================
 # RELOAD NGINX

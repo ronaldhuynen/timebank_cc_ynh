@@ -79,7 +79,6 @@ pushd "$install_dir"
 	ynh_use_nodejs
 	npm install
 	npm install jquery --save
-	sudo npm run dev	#TODO: change to production when ready!
 popd
 
 
@@ -102,17 +101,20 @@ pushd $install_dir
 	chgrp -R www-data storage bootstrap/cache public/css public/js
 	chmod -R ug+rwx storage bootstrap/cache public/css public/js
 	chmod +x artisan
+	sudo npm run dev	#TODO: change to production when ready!
 popd
 
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=2
+ynh_script_progression --message="Starting systemd services..." --weight=2
 
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.log"
+# Start the systemd service
+ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.systemd.log"
 
+# Start the websocket service
+ynh_systemd_action --service_name=websocket --action=start --log_path="/var/log/$app/$app.websocket.log"
 
 #=================================================
 # RELOAD NGINX

@@ -1,16 +1,17 @@
 [Unit]
-Description=Laravel Queue Worker Systemd Service
+Description=Laravel Queue Worker Service
 After=network.target
 
 [Service]
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-# Set to correct php version
-#ExecStart=__INSTALL_DIR__/artisan queue:work --sleep=10 --tries=5
+
+# Start the queue worker. 
+# --tries is number of times a failed job is retried 
+# --max-time is the duration in sec. before the queue worker restarts. This helps to prevent memory leaks.
 ExecStart=/usr/bin/php__PHPVERSION__ __INSTALL_DIR__/artisan queue:work --sleep=10 --tries=5 --max-time=3600
-#StandardOutput=append:/var/log/__APP__/__APP__.log
-# StandardOutput=append:/var/log/__APP__.log
+
 StandardError=inherit
 TimeoutStopSec=5
 Restart=always

@@ -83,4 +83,4 @@ ram.runtime = "100M"
 
     [resources.ports]
     # Websockets broadcasting service uses port 6001 
-    main.default = 6001
+    websocket.default = 6001

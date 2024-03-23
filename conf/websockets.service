@@ -1,5 +1,5 @@
 [Unit]
-Description=Laravel Websocket Service
+Description=Laravel Websockets Service
 After=network.target
 
 [Service]

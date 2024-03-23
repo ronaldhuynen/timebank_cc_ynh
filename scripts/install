@@ -106,7 +106,7 @@ popd
 
 
 #=================================================
-# START SYSTEMD SERVICE
+# START SERVICES
 #=================================================
 ynh_script_progression --message="Starting systemd services..." --weight=2
 
@@ -114,7 +114,7 @@ ynh_script_progression --message="Starting systemd services..." --weight=2
 ynh_systemd_action --service_name=$app --action=start --log_path="/var/log/$app/$app.systemd.log"
 
 # Start the websocket service
-ynh_systemd_action --service_name=websocket --action=start --log_path="/var/log/$app/$app.websocket.log"
+ynh_systemd_action --service_name=websocket.service --action=start --log_path="/var/log/$app/$app.websocket.log"
 
 #=================================================
 # RELOAD NGINX
